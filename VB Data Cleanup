@@ -1,0 +1,33 @@
+#Importing Packages
+import pandas as pd
+import numpy as np
+
+#Reading Flat File as DF
+df = pd.read_csv('/Users/jona.gonzalez/Documents/Python Projects/VolleyBall/Export/USAVolleyballClubsExportFinal1.csv')
+df.head()
+
+#Indexing Column & replacing strings
+df['Website'] = df.Website.str.replace(r'(^.*VolleyballClubDirectory.*$)','N/A',regex=Tr
+df.head(50)
+
+#Exporting
+df.to_csv('/Users/jona.gonzalez/Documents/Python Projects/VolleyBall/Export/USAVolleyballClubsExportFinal1.csv')
+
+#Reading Flat File as DF
+df2 = pd.read_csv('/Users/jona.gonzalez/Documents/Python Projects/VolleyBall/Export/URLListforEmails1.csv')
+df2.head()
+
+#Replacing Prefix
+df2['URLS'] = df2['URLS'].str.replace('<a href="','http://www.usavolleyballclubs.com/')
+df2.head()
+
+#Replacing Suffix
+df2['URLS'] = df2['URLS'].str.replace('">More info</a>','')
+df2.head(
+
+#Exporting
+df3 = pd.read_csv('/Users/jona.gonzalez/Documents/Python Projects/VolleyBall/Export/URLForEmailLoopFinal.csv')
+
+#Reading Flat File as DF
+U4E = df3['URLS'].to_list()
+print(U4E)
